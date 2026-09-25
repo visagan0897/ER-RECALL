@@ -3,7 +3,10 @@ from fastapi import FastAPI
 from database import get_connection
 
 
-app = FastAPI(title="ER Recall API")
+app = FastAPI(
+    title="ER Recall API",
+    version="0.1.0",
+)
 
 
 @app.get("/health")
