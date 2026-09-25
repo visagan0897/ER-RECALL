@@ -1,0 +1,14 @@
+# Environment secrets
+.env
+.env.*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local development
+*.log
+
+# Local pgvector build source
+pgvector/
