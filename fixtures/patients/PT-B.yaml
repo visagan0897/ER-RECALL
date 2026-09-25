@@ -1,0 +1,92 @@
+prototype_code: PT-B
+
+documents:
+  - doc_key: B1
+    facility_code: HOSP-B
+    document_type: discharge_summary
+    document_date: 2022-01-01
+    title: Discharge Summary
+    body: "## Allergies\nSulfonamide allergy documented (reaction: hives).\n\n## Medications\nAspirin 75 mg daily.\nAtorvastatin 40 mg nightly.\n\n## Problems\nMyocardial infarction.\n\n## Past Surgical History\nPCI with stent.\n\n## Admissions\nAdmission for myocardial infarction.\n\n## Blood Group\n\n## Clinical Summary\nMyocardial infarction with PCI and stent documented. Canary reference: REF-B-4402."
+    facts:
+      - category: allergy
+        normalized_key: sulfonamide
+        assertion: present
+        display_text: "Sulfonamide allergy documented (reaction: hives)."
+        attributes:
+          reaction: hives
+
+      - category: medication
+        normalized_key: aspirin
+        assertion: present
+        display_text: "Aspirin 75 mg daily."
+        attributes:
+          dose: 75 mg
+          frequency: daily
+
+      - category: medication
+        normalized_key: atorvastatin
+        assertion: present
+        display_text: "Atorvastatin 40 mg nightly."
+        attributes:
+          dose: 40 mg
+          frequency: nightly
+
+      - category: condition
+        normalized_key: myocardial_infarction
+        assertion: present
+        display_text: "Myocardial infarction."
+        attributes: {}
+
+      - category: surgery
+        normalized_key: pci_with_stent
+        assertion: present
+        display_text: "PCI with stent."
+        attributes: {}
+
+      - category: hospitalization
+        normalized_key: myocardial_infarction
+        assertion: present
+        display_text: "Admission for myocardial infarction."
+        attributes: {}
+
+  - doc_key: B2
+    facility_code: HOSP-A
+    document_type: medication_list
+    document_date: 2024-01-01
+    title: Medication List
+    body: "## Allergies\n\n## Medications\nAtorvastatin 20 mg nightly.\nAspirin 75 mg daily.\n\n## Problems\n\n## Past Surgical History\n\n## Admissions\n\n## Blood Group\n\n## Clinical Summary\nCurrent medication list documents atorvastatin 20 mg nightly and aspirin 75 mg daily. Canary reference: REF-B-4402."
+    facts:
+      - category: medication
+        normalized_key: atorvastatin
+        assertion: present
+        display_text: "Atorvastatin 20 mg nightly."
+        attributes:
+          dose: 20 mg
+          frequency: nightly
+
+      - category: medication
+        normalized_key: aspirin
+        assertion: present
+        display_text: "Aspirin 75 mg daily."
+        attributes:
+          dose: 75 mg
+          frequency: daily
+
+  - doc_key: B3
+    facility_code: HOSP-B
+    document_type: clinic_note
+    document_date: 2024-01-01
+    title: Cardiology Clinic Note
+    body: "## Allergies\n\n## Medications\n\n## Problems\nFollow-up for previous myocardial infarction.\n\n## Past Surgical History\nHistory of PCI with stent.\n\n## Admissions\n\n## Blood Group\n\n## Clinical Summary\nCardiology follow-up for previous myocardial infarction and PCI with stent. Canary reference: REF-B-4402."
+    facts:
+      - category: condition
+        normalized_key: myocardial_infarction
+        assertion: present
+        display_text: "Previous myocardial infarction documented."
+        attributes: {}
+
+      - category: surgery
+        normalized_key: pci_with_stent
+        assertion: present
+        display_text: "History of PCI with stent."
+        attributes: {}

@@ -1,0 +1,39 @@
+prototype_code: PT-D
+
+documents:
+  - doc_key: D1
+    facility_code: HOSP-C
+    document_type: ed_note
+    document_date: 2025-01-01
+    title: Emergency Department Note
+    body: |
+      ## Allergies
+
+      ## Medications
+      Salbutamol inhaler as needed.
+
+      ## Problems
+      Asthma.
+
+      ## Past Surgical History
+
+      ## Admissions
+
+      ## Blood Group
+
+      ## Clinical Summary
+      Asthma and salbutamol use documented. Canary reference: REF-D-2267.
+
+    facts:
+      - category: medication
+        normalized_key: salbutamol
+        assertion: present
+        display_text: Salbutamol inhaler as needed.
+        attributes:
+          frequency: as needed
+
+      - category: condition
+        normalized_key: asthma
+        assertion: present
+        display_text: Asthma.
+        attributes: {}

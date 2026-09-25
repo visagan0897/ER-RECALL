@@ -1,0 +1,46 @@
+prototype_code: PT-A
+
+documents:
+  - doc_key: A1
+    facility_code: HOSP-A
+    document_type: discharge_summary
+    document_date: 2021-01-01
+    title: Discharge Summary
+    body: "## Allergies\nPenicillin allergy documented (reaction: rash).\n\n## Medications\n\n## Problems\n\n## Past Surgical History\nAppendectomy.\n\n## Admissions\n\n## Blood Group\n\n## Clinical Summary\nAppendectomy documented. Canary reference: REF-A-7731."
+    facts:
+      - category: allergy
+        normalized_key: penicillin
+        assertion: present
+        display_text: "Penicillin allergy documented (reaction: rash)."
+        attributes:
+          reaction: rash
+      - category: surgery
+        normalized_key: appendectomy
+        assertion: present
+        display_text: "Appendectomy documented."
+        attributes: {}
+
+  - doc_key: A2
+    facility_code: HOSP-B
+    document_type: clinic_note
+    document_date: 2024-01-01
+    title: Clinic Note
+    body: "## Allergies\nNo known drug allergies documented.\n\n## Medications\nAmlodipine 5 mg once daily.\n\n## Problems\nHypertension.\n\n## Past Surgical History\n\n## Admissions\n\n## Blood Group\n\n## Clinical Summary\nHypertension and amlodipine therapy documented. Canary reference: REF-A-7731."
+    facts:
+      - category: allergy
+        normalized_key: "*"
+        assertion: absent
+        display_text: "No known drug allergies documented."
+        attributes: {}
+      - category: medication
+        normalized_key: amlodipine
+        assertion: present
+        display_text: "Amlodipine 5 mg once daily."
+        attributes:
+          dose: 5 mg
+          frequency: once daily
+      - category: condition
+        normalized_key: hypertension
+        assertion: present
+        display_text: "Hypertension."
+        attributes: {}

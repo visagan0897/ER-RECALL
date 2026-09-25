@@ -1,0 +1,92 @@
+prototype_code: PT-C
+
+documents:
+  - doc_key: C1
+    facility_code: HOSP-C
+    document_type: clinic_note
+    document_date: 2020-01-01
+    title: Clinic Note
+    body: |
+      ## Allergies
+
+      ## Medications
+      Metformin 500 mg twice daily.
+
+      ## Problems
+      Type 2 diabetes.
+
+      ## Past Surgical History
+
+      ## Admissions
+
+      ## Blood Group
+      Blood group B positive.
+
+      ## Clinical Summary
+      Type 2 diabetes and blood group B positive documented. Canary reference: REF-C-9158.
+
+    facts:
+      - category: medication
+        normalized_key: metformin
+        assertion: present
+        display_text: Metformin 500 mg twice daily.
+        attributes:
+          dose: 500 mg
+          frequency: twice daily
+
+      - category: condition
+        normalized_key: type_2_diabetes
+        assertion: present
+        display_text: Type 2 diabetes.
+        attributes: {}
+
+      - category: blood_group
+        normalized_key: abo_rh
+        assertion: present
+        display_text: Blood group B positive.
+        attributes:
+          value: B positive
+
+  - doc_key: C2
+    facility_code: HOSP-A
+    document_type: discharge_summary
+    document_date: 2023-01-01
+    title: Discharge Summary
+    body: |
+      ## Allergies
+
+      ## Medications
+
+      ## Problems
+
+      ## Past Surgical History
+      Cholecystectomy.
+
+      ## Admissions
+      Admission for cholecystectomy.
+
+      ## Blood Group
+      Blood group B negative.
+
+      ## Clinical Summary
+      Cholecystectomy admission and blood group B negative documented. Canary reference: REF-C-9158.
+
+    facts:
+      - category: surgery
+        normalized_key: cholecystectomy
+        assertion: present
+        display_text: Cholecystectomy.
+        attributes: {}
+
+      - category: hospitalization
+        normalized_key: cholecystectomy
+        assertion: present
+        display_text: Admission for cholecystectomy.
+        attributes: {}
+
+      - category: blood_group
+        normalized_key: abo_rh
+        assertion: present
+        display_text: Blood group B negative.
+        attributes:
+          value: B negative

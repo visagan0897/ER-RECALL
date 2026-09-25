@@ -1,0 +1,9 @@
+facilities:
+  - code: HOSP-A
+    name: Demo City General Hospital A (fictional)
+
+  - code: HOSP-B
+    name: Demo City General Hospital B (fictional)
+
+  - code: HOSP-C
+    name: Demo City General Hospital C (fictional)
