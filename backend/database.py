@@ -1,9 +1,12 @@
+from pathlib import Path
 import os
 
 import psycopg
 from dotenv import load_dotenv
 
-load_dotenv()
+
+BACKEND_DIR = Path(__file__).resolve().parent
+load_dotenv(BACKEND_DIR / ".env")
 
 
 def get_database_url() -> str:
