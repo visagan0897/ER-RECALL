@@ -1,39 +1,27 @@
 prototype_code: PT-D
 
+patient:
+  full_name: Naraen
+  date_of_birth: 2008-05-16
+  sex: male
+
 documents:
   - doc_key: D1
     facility_code: HOSP-C
     document_type: ed_note
     document_date: 2025-01-01
     title: Emergency Department Note
-    body: |
-      ## Allergies
-
-      ## Medications
-      Salbutamol inhaler as needed.
-
-      ## Problems
-      Asthma.
-
-      ## Past Surgical History
-
-      ## Admissions
-
-      ## Blood Group
-
-      ## Clinical Summary
-      Asthma and salbutamol use documented. Canary reference: REF-D-2267.
-
+    body: "## Allergies\n\n## Medications\nSalbutamol inhaler as needed.\n\n## Problems\nAsthma.\n\n## Past Surgical History\n\n## Admissions\n\n## Blood Group\n\n## Clinical Summary\nAsthma and salbutamol use documented. Canary reference: REF-D-2267."
     facts:
       - category: medication
         normalized_key: salbutamol
         assertion: present
-        display_text: Salbutamol inhaler as needed.
+        display_text: "Salbutamol inhaler as needed."
         attributes:
           frequency: as needed
 
       - category: condition
         normalized_key: asthma
         assertion: present
-        display_text: Asthma.
+        display_text: "Asthma."
         attributes: {}

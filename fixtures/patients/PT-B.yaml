@@ -1,5 +1,10 @@
 prototype_code: PT-B
 
+patient:
+  full_name: Sajiv Prajin
+  date_of_birth: 2007-06-11
+  sex: male
+
 documents:
   - doc_key: B1
     facility_code: HOSP-B

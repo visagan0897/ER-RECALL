@@ -1,5 +1,10 @@
 prototype_code: PT-A
 
+patient:
+  full_name: Visagan
+  date_of_birth: 2007-09-08
+  sex: male
+
 documents:
   - doc_key: A1
     facility_code: HOSP-A
@@ -14,6 +19,7 @@ documents:
         display_text: "Penicillin allergy documented (reaction: rash)."
         attributes:
           reaction: rash
+
       - category: surgery
         normalized_key: appendectomy
         assertion: present
@@ -32,6 +38,7 @@ documents:
         assertion: absent
         display_text: "No known drug allergies documented."
         attributes: {}
+
       - category: medication
         normalized_key: amlodipine
         assertion: present
@@ -39,6 +46,7 @@ documents:
         attributes:
           dose: 5 mg
           frequency: once daily
+
       - category: condition
         normalized_key: hypertension
         assertion: present

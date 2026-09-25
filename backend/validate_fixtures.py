@@ -1,3 +1,4 @@
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -37,6 +38,13 @@ ALLOWED_HEADINGS = {
     "Admissions",
     "Blood Group",
     "Clinical Summary",
+}
+
+ALLOWED_SEXES = {
+    "female",
+    "male",
+    "other",
+    "unknown",
 }
 
 EXPECTED_CANARIES = {
@@ -85,6 +93,34 @@ def validate_patient(path: Path):
     expected_canary = EXPECTED_CANARIES.get(patient_code)
     assert expected_canary, f"{path.name}: unexpected prototype_code {patient_code}"
 
+    patient = data.get("patient")
+    assert isinstance(patient, dict), (
+        f"{path.name}: patient must be a mapping"
+    )
+
+    full_name = patient.get("full_name")
+    date_of_birth = patient.get("date_of_birth")
+    sex = patient.get("sex")
+
+    assert isinstance(full_name, str) and full_name.strip(), (
+        f"{path.name}: patient.full_name is required"
+    )
+
+    assert date_of_birth, (
+        f"{path.name}: patient.date_of_birth is required"
+    )
+
+    try:
+        date.fromisoformat(str(date_of_birth))
+    except ValueError:
+        raise AssertionError(
+            f"{path.name}: patient.date_of_birth must use YYYY-MM-DD"
+        )
+
+    assert sex in ALLOWED_SEXES, (
+        f"{path.name}: invalid patient.sex {sex!r}"
+    )
+
     documents = data.get("documents")
     assert isinstance(documents, list), f"{path.name}: documents must be a list"
     assert documents, f"{path.name}: at least one document is required"
@@ -116,7 +152,7 @@ def validate_patient(path: Path):
             f"{document_type!r}"
         )
 
-        assert isinstance(body, str), (
+        assert body is not None and isinstance(body, str), (
             f"{path.name} {doc_key}: body must be text"
         )
 
